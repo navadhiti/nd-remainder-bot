@@ -108,7 +108,7 @@ reminders:
       
       As of 13/05/2026, we have restricted this key to use only the Gmail API for one week. If no application issues or breaks are identified during this period, we can proceed with deleting the key and removing the remaining unused permissions.
       
-      GCP â Navadhiti â APIs & Services
+      GCP  -  Navadhiti  -  APIs & Services
       
       If required, we can wait for one week before removing the remaining access.
     schedule_type: interval_days
