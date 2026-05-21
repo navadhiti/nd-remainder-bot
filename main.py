@@ -37,9 +37,9 @@ def main() -> None:
     for r in reminders:
         status = "🟢 enabled" if r.get("enabled", True) else "🔴 disabled"
         try:
-            nxt = get_next_run(r["schedule"], r.get("timezone", "Asia/Kolkata"))
+            nxt = get_next_run(r)
         except Exception:
-            nxt = "invalid cron"
+            nxt = "invalid schedule"
         print(f"   • {r['id']:30s} {status:15s} next → {nxt}")
 
     print()

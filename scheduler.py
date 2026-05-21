@@ -152,9 +152,30 @@ def _already_ran(reminder_id: str, fire_time: datetime) -> bool:
     return False
 
 
-def get_next_run(cron_expr: str, timezone: str = "Asia/Kolkata") -> str:
+def get_next_run(reminder: dict) -> str:
     """Return a human-readable string of the next fire time (for debugging)."""
+    timezone = reminder.get("timezone", "Asia/Kolkata")
     tz = pytz.timezone(timezone)
     now = datetime.now(tz)
+
+    schedule_type = reminder.get("schedule_type", "cron")
+
+    if schedule_type == "interval_days":
+        start_date_str = reminder.get("start_date")
+        interval = int(reminder.get("interval_days", 1))
+        if not start_date_str or interval <= 0:
+            return "invalid interval config"
+        start_date = datetime.strptime(start_date_str, "%Y-%m-%d").date()
+        today = now.date()
+        days_since_start = max(0, (today - start_date).days)
+        days_until_next = interval - (days_since_start % interval)
+        if days_until_next == interval and today >= start_date:
+            days_until_next = 0
+        next_date = today + timedelta(days=days_until_next)
+        return f"{next_date.strftime('%Y-%m-%d')} 09:00 {now.strftime('%Z')}"
+
+    cron_expr = reminder.get("schedule", "")
+    if not cron_expr:
+        return "no schedule defined"
     cron = croniter(cron_expr, now)
     return cron.get_next(datetime).strftime("%Y-%m-%d %H:%M %Z")
