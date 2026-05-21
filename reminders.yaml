@@ -113,7 +113,7 @@ reminders:
       If required, we can wait for one week before removing the remaining access.
     schedule_type: interval_days
     interval_days: 7
-    start_date: "2026-05-13"
+    start_date: "2026-05-15"
     timezone: "Asia/Kolkata"
     enabled: true
     channels:
