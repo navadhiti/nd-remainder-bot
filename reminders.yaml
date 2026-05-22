@@ -119,5 +119,5 @@ reminders:
     channels:
       - email
     email_recipients:
-      - vijaybaskaran@navadhiti.com
+      - devops@navadhiti.com
 
