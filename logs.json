@@ -311,6 +311,12 @@
       "timestamp": "2026-05-29T03:46:48.561456Z",
       "status": "success",
       "message": "Sent via email"
+    },
+    {
+      "reminder_id": "ichb_monthly_data",
+      "timestamp": "2026-05-31T03:47:02.076880Z",
+      "status": "success",
+      "message": "Sent via email"
     }
   ]
 }
