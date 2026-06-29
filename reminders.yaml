@@ -98,7 +98,7 @@ reminders:
     timezone: "Asia/Kolkata"
     enabled: true
     channels:
-      - email
+      - webhook
     email_recipients:
       - devops@navadhiti.com
 
