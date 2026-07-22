@@ -102,3 +102,28 @@ reminders:
     email_recipients:
       - devops@navadhiti.com
 
+  - id: gcs_gsutill_package_update
+    message: |
+      [Action Required] Transition your scripts and workflows from gsutil to gcloud storage before Mar 2027
+      
+      We reviewed the Google Cloud notification regarding the deprecation of the bundled gsutil tool in the Google Cloud CLI.
+      
+      At this time, no action is required. This change will take effect starting March 2027 and does not impact the current environment or existing workloads. Any existing VMs with gsutil already installed will continue to function as expected.
+      
+      The only scenario where action will be required is when provisioning new VMs or creating new environments with the Google Cloud CLI version released after March 2027. In those cases, gsutil will no longer be included by default, and we will either:
+      
+      Update our scripts to use the recommended gcloud storage commands, or
+      Install gsutil separately if it is still required.
+      We will incorporate these changes into any future deployments or environment builds as needed. No immediate changes are necessary for the existing infrastructure.
+      
+      Please let us know if you have any questions.
+    schedule_type: interval_days
+    interval_days: 45
+    start_date: "2026-07-23"
+    timezone: "Asia/Kolkata"
+    enabled: true
+    channels:
+      - email
+    email_recipients:
+      - devops@navadhiti.com
+
