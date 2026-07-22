@@ -102,23 +102,3 @@ reminders:
     email_recipients:
       - devops@navadhiti.com
 
-  - id: gcs_gsutill_package_update
-    message: |
-      The only scenario where action will be required is when provisioning new VMs or creating new environments with the Google Cloud CLI version released after March 2027. In those cases, gsutil will no longer be included by default, and we will either:
-      
-      Update our scripts to use the recommended gcloud storage commands, or
-      Install gsutil separately if it is still required.
-      
-      We have to check this once we completed the quee in seva portal
-      
-      Make it as least priority
-    schedule_type: interval_days
-    interval_days: 45
-    start_date: "2026-07-23"
-    timezone: "Asia/Kolkata"
-    enabled: true
-    channels:
-      - email
-    email_recipients:
-      - devops@navadhiti.com
-
