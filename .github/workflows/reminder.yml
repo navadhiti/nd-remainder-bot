@@ -3,7 +3,7 @@ name: 🔔 Reminder Bot
 on:
   # Run every 5 minutes
   schedule:
-    - cron: "*/10 * * * *"
+   # - cron: "*/10 * * * *"
 
   # Allow manual trigger from GitHub UI or test button
   workflow_dispatch:
