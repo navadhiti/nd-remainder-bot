@@ -127,3 +127,20 @@ reminders:
     email_recipients:
       - devops@navadhiti.com
 
+  - id: pep_ios_distribution_certificate
+    message: |
+      Renew the Apple Developer Distribution Certificate before it expires for pep nudge sports.
+      Team ID: ZC3378TAMN
+      Please ensure the new certificate is generated and updated in the required systems/CI-CD pipelines.
+      
+      Action required: Complete the renewal before the certificate expiry date to avoid any impact on iOS application builds and releases.
+    schedule: "0 9 31 7 *"
+    timezone: "Asia/Kolkata"
+    enabled: true
+    channels:
+      - email
+    email_recipients:
+      - achaiah@navadhiti.com
+      - devops@navadhiti.com
+      - amitgadkari@nudgeconsulting.in
+
